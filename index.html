@@ -3,103 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your ePortfolio</title>
+    <title>Charls Melindo - Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
         }
 
-        header nav ul {
+        nav {
+            position: fixed;
+            width: 100%;
+            background: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
             list-style: none;
-            padding: 0;
+            gap: 2rem;
         }
 
-        header nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        header nav ul li a {
-            color: white;
+        nav a {
             text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #007bff;
         }
 
         section {
-            margin: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 5px;
+            min-height: 100vh;
+            padding: 6rem 2rem 2rem;
         }
 
-        form input {
-            margin: 5px 0;
-            padding: 10px;
-            width: 100%;
-            border: 1px solid #ccc;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        form button {
-            padding: 10px 20px;
-            background-color: #333;
+        #home {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .profile {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .bio {
+            flex: 1;
+        }
+
+        .skills {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .skill-tag {
+            background: #007bff;
             color: white;
-            border: none;
-            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        #projects {
+            background: #fff;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        #contact {
+            background: linear-gradient(135deg, #c3cfe2 0%, #f5f7fa 100%);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #007bff;
+        }
+
+        h1, h2 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .skills {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My ePortfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>This is a brief introduction about yourself. Mention your education, skills, and experience.</p>
+    <section id="home">
+        <div class="container">
+            <div class="profile">
+                <img src="https://avatars.githubusercontent.com/u/114855855?v=4" alt="Profile Picture" class="profile-img">
+                <div class="bio">
+                    <h1>Charls Melindo</h1>
+                    <p>I'm Charls, a third year barely surviving student with a passion on Artificial Intelligence and Computing Systems</p>
+                    
+                    <h2>Skills</h2>
+                    <div class="skills">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="https://github.com/yourusername/project1">Project 1</a> - Description of the project.</li>
-            <li><a href="https://github.com/yourusername/project2">Project 2</a> - Description of the project.</li>
-            <!-- Add more projects here -->
-        </ul>
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Todo App</h3>
+                    <p>A comprehensive todo application built with modern web technologies.</p>
+                    <a href="https://github.com/Chxrls/adet-todo-app" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>Maps Project</h3>
+                    <p>An interactive mapping application showcasing location-based features.</p>
+                    <a href="https://github.com/Chxrls/Maps" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>Calculator</h3>
+                    <p>A feature-rich calculator application with a modern interface.</p>
+                    <a href="https://github.com/Chxrls/CALCULATOR" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <button type="submit">Submit</button>
-        </form>
+        <div class="container">
+            <h2>Connect With Me</h2>
+            <div class="social-links">
+                <a href="https://fb.me/melindocharls" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://instagram.com/0xCharls/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/Chxrls" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
     </section>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Form submitted successfully!');
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Add active class to nav items on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
